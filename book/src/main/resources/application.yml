@@ -1,0 +1,62 @@
+server:
+  port: 9999
+
+spring:
+  profiles:
+    active: prod
+  servlet:
+    multipart:
+      max-file-size: 1024000KB
+      max-request-size: 1024000KB
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+
+fdfs:
+  connect-timeout: 30000
+  so-timeout: 30000
+  thumb-image:
+    height: 150
+    width: 150
+  tracker-list:
+    - 47.109.95.126:22122
+  web-server-url: http://47.109.95.126:8080/
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+    picture-path: 'E://ljguo/images'
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ljguo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 20001020
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  web:
+    resources:
+      static-locations: ${spring.config.picture-path}
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+    picture-path: '/home/ljguo/'
+
+  datasource:
+    url: jdbc:mysql://47.109.95.126:3306/ljguo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 20001020
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  web:
+    resources:
+      static-locations: file:${spring.config.picture-path}
+

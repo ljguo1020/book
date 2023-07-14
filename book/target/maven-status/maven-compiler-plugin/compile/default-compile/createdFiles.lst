@@ -1,0 +1,11 @@
+com\ljguo\service\BookService.class
+com\ljguo\utils\PageBean.class
+com\ljguo\pojo\Book.class
+com\ljguo\controller\BookController.class
+com\ljguo\service\FDFSService.class
+com\ljguo\service\impl\FDFSServiceImpl.class
+com\ljguo\utils\R.class
+com\ljguo\App.class
+com\ljguo\mapper\BookMapper.class
+com\ljguo\service\impl\BookServiceImpl.class
+com\ljguo\utils\CodeEnum.class

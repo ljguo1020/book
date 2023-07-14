@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ljguo.mapper.BookMapper">
+
+    <resultMap id="QaResulMap" type="com.ljguo.pojo.Book">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="author" column="author"/>
+        <result property="category" column="category"/>
+        <result property="description" column="description"/>
+        <result property="images" column="images"/>
+        <result property="url" column="url"/>
+    </resultMap>
+
+    <select id="findCategories" resultType="java.lang.String">
+        select distinct category from book
+    </select>
+
+
+</mapper>
